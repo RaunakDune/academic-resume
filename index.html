@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dr. Raunak Sarbajna Academic Resume</title>
   <style>
-    /* Plain & approachable styling */
+    /* Basic understated sober styling */
     :root {
       --bg: #fdfbf7;
       --surface: #f4f1ea;
@@ -192,6 +192,60 @@
       border: 1px solid var(--rule);
     }
 
+    /* Section nav */
+    nav.section-nav {
+      margin-bottom: 3rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    nav.section-nav ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.75rem;
+    }
+
+    nav.section-nav a {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-soft);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+    }
+
+    nav.section-nav a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background-color: var(--surface);
+    }
+
+    /* Testimonials */
+    .testimonial {
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .testimonial p.quote {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial .attribution {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
     /* Footer */
     footer {
       margin-top: 4rem;
@@ -239,11 +293,25 @@
       </div>
     </header>
 
+    <!-- Section navigation -->
+    <nav class="section-nav" aria-label="Page sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#positions">Academic Positions</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#conference">Conference Talks</a></li>
+        <li><a href="#review">Peer Review</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+      </ul>
+    </nav>
+
     <!-- About -->
-    <section aria-label="About">
+    <section id="about" aria-label="About">
       <h2>About</h2>
       <p>
-        I am a Geospatial Data Scientist with a focus on ML/AI, with a particular specialization in remote sensing, geotechnical engineering, geostatistics, agent-based modeling and visual place recognition. I have worked in blockchain-based edge computing, post-disaster recovery systems and Lunar exploration methodologies. I enjoy lecturing and teaching undergraduate students.
+        I am a Geospatial Data Scientist with a decade-long focus on ML/AI. I particularly specialize in remote sensing, geotechnical engineering, geostatistics, agent-based modeling and visual place recognition. I have worked in blockchain-based edge computing, post-disaster recovery systems and Lunar exploration methodologies. I enjoy lecturing and teaching undergraduate students.
       </p>
       <div class="tags">
         <span class="tag">GIS</span>
@@ -255,7 +323,7 @@
     </section>
 
     <!-- Education -->
-    <section aria-label="Education">
+    <section id="education" aria-label="Education">
       <h2>Education</h2>
 
       <div class="entry">
@@ -295,7 +363,7 @@
     </section>
 
     <!-- Positions -->
-    <section aria-label="Positions">
+    <section id="positions" aria-label="Positions">
       <h2>Academic Positions</h2>
 
       <div class="entry">
@@ -333,7 +401,7 @@
     </section>
 
     <!-- Publications -->
-    <section aria-label="Publications">
+    <section id="publications" aria-label="Publications">
       <h2>Selected Publications</h2>
 
       <article class="pub">
@@ -374,8 +442,8 @@
     </section>
 
     <!-- Teaching -->
-    <section aria-label="Teaching">
-      <h2>Teaching</h2>
+    <section id="teaching" aria-label="Teaching">
+      <h2>Classes Taught</h2>
       <ul>
         <li><strong>COSC 3337:</strong> Data Science I</li>
         <li><strong>COSC 4368:</strong> Fundamentals of Artificial Intelligence</li>
@@ -384,20 +452,21 @@
     </section>
 
     <!-- Conference -->
-    <section aria-label="Conference">
+    <section id="conference" aria-label="Conference">
       <h2>Selected Conference Talks</h2>
       <ul>
-        <li>Sixth Annual STEM Conference</>, Lamar University, USA. <em>2018.</em></li>
+        <li>Sixth Annual STEM Conference, Lamar University, USA. <em>2018.</em></li>
         <li>Ignite 2019, University of California, Davis, USA. <em>2019.</em></li>
         <li>BRAINS 2021, Paris, France. <em>2021.</em></li>
         <li>NASA Johnson Space Center Hackathon, Houston, USA. <em>2022, 2023.</em></li>
-        <li>6th ACM SIGSPATIAL International Workshop on GeoSpatial Simulation, Hamburg, Germany. <em>2023.</em></li>
+        <li><a href="https://www.youtube.com/watch?v=loHamHxb-aQ">6th ACM SIGSPATIAL International Workshop on GeoSpatial Simulation, Hamburg, Germany. <em>2023.</em></a></li>
+        <li><a href="https://www.youtube.com/watch?v=tzZDv7YeMA4">University of Houston Undergraduate Colloquium, Houston, USA. <em>2025.</em></a></li>
       </ul>
     </section>
 
     <!-- Review -->
-    <section aria-label="Review">
-      <h2>Peer Review</h2>
+    <section id="review" aria-label="Review">
+      <h2>Peer Review Venues</h2>
       <ul>
         <li>IEEE 16th International Conference on Smart City. <em>2018.</em></li>
         <li>IEEE 20th International Conference on High Performance Computing and Communications. <em>2018.</em></li>
@@ -409,9 +478,39 @@
       </ul>
     </section>
 
+    <!-- Testimonials -->
+    <section id="testimonials" aria-label="Testimonials">
+      <h2>Student Testimonials</h2>
+
+      <div class="testimonial">
+        <p class="quote">"Professor Raunak was one of the better professors in the Computer Science department. He seemed knowledgeable about the subject. I was able to reach him with questions outside of class easily and he would respond immediately. He made all class material easily available to us and his notes were easy to understand. I do not have anything bad to say about the instructor. "</p>
+        <p class="attribution">— Student, COSC 4368: Fundamentals of Artificial Intelligence</p>
+      </div>
+      
+      <div class="testimonial">
+        <p class="quote">"The instructor was able to convey his ideas and lectures clearly. He was very enthusiastic about the material and made it easy to digest the knowledge he wanted to present. The presentation format is pretty great too. Groups of students come together to present a given research paper to explain to other students what it's about allowing us to understand current standings of the AI field. Overall, I really like this class."</p>
+        <p class="attribution">— Student, COSC 4368: Fundamentals of Artificial Intelligence</p>
+      </div>         
+
+      <div class="testimonial">
+        <p class="quote">"+ prof obviously knows about the topics and has most of the techniques taught in real life + pretty good lectures, good at explaining and not just reading slides + exams were pretty straightforward (in terms of the actual questions) + project was fun + textbooks were similar to lecture so textbooks were a good resource - we covered a lot so we were only able to learn about the fundamentals of all the techniques (not necessarily bad)"</p>
+        <p class="attribution">— Student, COSC 3337: Data Science I</p>
+      </div>
+
+      <div class="testimonial">
+        <p class="quote">"hi raunak, thank you for your help this semester, you helped me a lot with this class and i think youre the best TA ive ever had for any class"</p>
+        <p class="attribution">— Student, COSC 3337: Data Science I</p>
+      </div>
+
+      <div class="testimonial">
+        <p class="quote">"Well hopefully we get blessed with your skills next semseter. By far the best TA I have ever had."</p>
+        <p class="attribution">— Student, COSC 3337: Data Science I</p>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer>
-      <p>Last updated July 2026 &middot; Built by Raunak with plain HTML</p>
+      <p>Last updated 19 July 2026 &middot; Built by Raunak with plain HTML</p>
     </footer>
   </main>
 
