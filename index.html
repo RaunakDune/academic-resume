@@ -1,61 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Raunak Sarbajna Academic Resume</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Raunak Sarbajna · Professor of Practice, Computer Science · University of Houston</title>
+  <meta name="description" content="Dr. Raunak Sarbajna is a Professor of Practice in Computer Science at the University of Houston, working on geospatial data science, visual place recognition for lunar navigation, crowdsensing and agent-based modeling.">
+  <meta name="author" content="Raunak Sarbajna">
+  <link rel="canonical" href="https://raunaksarbajna.com/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1b1a18" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c45c3e'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%23fdfbf7'%3ERS%3C/text%3E%3C/svg%3E">
+
+  <!-- Social previews -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Dr. Raunak Sarbajna · Professor of Practice, University of Houston">
+  <meta property="og:description" content="Geospatial data science, lunar visual place recognition, crowdsensing and agent-based modeling.">
+  <meta property="og:url" content="https://raunaksarbajna.com/">
+  <meta property="profile:first_name" content="Raunak">
+  <meta property="profile:last_name" content="Sarbajna">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raunak Sarbajna",
+    "honorificPrefix": "Dr.",
+    "jobTitle": "Professor of Practice",
+    "url": "https://raunaksarbajna.com/",
+    "email": "mailto:rsarbajna@uh.edu",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Houston",
+      "department": { "@type": "Organization", "name": "Department of Computer Science" }
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Houston" },
+      { "@type": "CollegeOrUniversity", "name": "Lamar University" },
+      { "@type": "CollegeOrUniversity", "name": "Indian Institute of Remote Sensing" }
+    ],
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "ORCID",
+      "value": "0000-0002-3184-7226"
+    },
+    "sameAs": [
+      "https://orcid.org/0000-0002-3184-7226",
+      "https://scholar.google.com/citations?user=Ypn_raEAAAAJ",
+      "https://github.com/RaunakDune",
+      "https://www.linkedin.com/in/raunak-sarbajna-81070a42/"
+    ],
+    "knowsAbout": ["Geographic Information Systems", "Remote Sensing", "Machine Learning", "Agent-Based Modeling", "Visual Place Recognition"]
+  }
+  </script>
+
   <style>
-    /* Basic understated sober styling */
+    /* Understated, sober styling — light and dark themes */
     :root {
       --bg: #fdfbf7;
       --surface: #f4f1ea;
       --text: #2a2a2a;
       --text-soft: #5c5c5c;
-      --accent: #c45c3e; /* warm terracotta */
+      --accent: #b0502f;          /* warm terracotta (AA contrast on --bg) */
+      --accent-soft: rgba(176, 80, 47, 0.28);
       --rule: #dcd8cf;
-      --font-body: "Georgia", "Times New Roman", serif;
-      --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-body: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      --font-heading: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+      --measure: 46rem;
+      color-scheme: light;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1b1a18;
+        --surface: #26241f;
+        --text: #ebe6dc;
+        --text-soft: #a8a196;
+        --accent: #e58a68;
+        --accent-soft: rgba(229, 138, 104, 0.35);
+        --rule: #3a3731;
+        color-scheme: dark;
+      }
     }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; padding: 0; }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 4.5rem;  /* keep anchored headings clear of the sticky nav */
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
 
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 17px;
+      font-size: 1.0625rem;
       line-height: 1.65;
       padding: 3rem 1.5rem;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Center the content narrowly for readability */
     main {
-      max-width: 720px;
+      max-width: var(--measure);
       margin: 0 auto;
     }
 
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent-soft);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    a:hover { border-bottom-color: var(--accent); }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* Skip link for keyboard users */
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -3rem;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.5rem 1rem;
+      border: 0;
+      border-radius: 4px;
+      font-family: var(--font-heading);
+      z-index: 10;
+    }
+    .skip-link:focus { top: 1rem; }
+
     /* Header */
-    header {
-      margin-bottom: 3rem;
+    header.masthead {
+      margin-bottom: 2rem;
       padding-bottom: 2rem;
       border-bottom: 2px solid var(--rule);
     }
 
     h1 {
       font-family: var(--font-heading);
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 1.4rem + 2vw, 2.4rem);
       font-weight: 400;
       letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 0.25rem;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
     }
 
     .subtitle {
@@ -70,27 +172,80 @@
       font-size: 0.95rem;
       color: var(--text-soft);
       line-height: 1.8;
+      font-style: normal;
     }
 
-    .contact a {
+    .profiles {
+      list-style: none;
+      margin-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.1rem;
+      margin-top: 0.6rem;
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+    }
+
+    /* Sticky section nav */
+    nav.section-nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      margin: 0 -0.5rem 2.5rem;
+      padding: 0.75rem 0.5rem;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    nav.section-nav ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    nav.section-nav li { margin: 0; }
+
+    /* On narrow screens, a single swipeable row keeps the sticky bar short */
+    @media (max-width: 640px) {
+      nav.section-nav ul {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      nav.section-nav ul::-webkit-scrollbar { display: none; }
+    }
+
+    nav.section-nav a {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-soft);
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+    }
+
+    nav.section-nav a:hover {
       color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(196, 92, 62, 0.25);
-      transition: border-color 0.2s;
-    }
-
-    .contact a:hover {
-      border-bottom-color: var(--accent);
+      border-color: var(--accent);
+      background-color: var(--surface);
     }
 
     /* Sections */
-    section {
-      margin-bottom: 3rem;
-    }
+    section { margin-bottom: 3rem; }
 
     h2 {
       font-family: var(--font-heading);
       font-size: 0.85rem;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-soft);
@@ -99,36 +254,19 @@
       border-bottom: 1px solid var(--rule);
     }
 
-    h3 {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      margin-bottom: 0.35rem;
-      color: var(--text);
-    }
+    ul, ol { margin-left: 1.25rem; margin-top: 0.5rem; }
+    li { margin-bottom: 0.6rem; }
+    li::marker { color: var(--text-soft); }
 
-    /* Lists */
-    ul, ol {
-      margin-left: 1.25rem;
-      margin-top: 0.5rem;
-    }
-
-    li {
-      margin-bottom: 0.6rem;
-    }
-
-    /* Entries (education, jobs) */
-    .entry {
-      margin-bottom: 1.6rem;
-    }
+    /* Entries (education, positions) */
+    .entry { margin-bottom: 1.6rem; }
 
     .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.25rem 1rem;
       margin-bottom: 0.15rem;
     }
 
@@ -143,6 +281,7 @@
       font-size: 0.85rem;
       color: var(--text-soft);
       white-space: nowrap;
+      font-variant-numeric: tabular-nums;
     }
 
     .entry-place {
@@ -151,38 +290,98 @@
       font-size: 0.95rem;
     }
 
-    .entry p {
-      margin-top: 0.35rem;
-      font-size: 0.98rem;
+    .entry p:not(.entry-place) { margin-top: 0.35rem; font-size: 0.98rem; }
+
+    .badge {
+      display: inline-block;
+      margin-left: 0.4rem;
+      padding: 0.05rem 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      border: 1px solid var(--accent-soft);
+      border-radius: 999px;
+      vertical-align: 0.15em;
     }
 
+    /* Research projects */
+    .project {
+      margin-bottom: 1.25rem;
+      padding: 1.1rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+    }
+
+    .project h3 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .project p { font-size: 0.97rem; }
+
+    .project .links {
+      list-style: none;
+      margin: 0.6rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+    }
+    .project .links li { margin: 0; }
+
     /* Publications */
+    ol.pubs { list-style: none; margin: 0; }
+
     .pub {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.3rem;
       padding-left: 1.25rem;
-      border-left: 3px solid var(--surface);
+      border-left: 3px solid var(--rule);
     }
 
     .pub-title {
       font-weight: 600;
       font-family: var(--font-heading);
+      line-height: 1.4;
     }
+
+    .pub-authors { font-size: 0.95rem; margin-top: 0.15rem; }
+    .pub-authors strong { font-weight: 600; }
 
     .pub-venue {
       font-size: 0.92rem;
       color: var(--text-soft);
     }
 
-    /* Small tags / pills for keywords */
+    .pub-links {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-top: 1.25rem;
+    }
+
+    /* Keyword tags */
     .tags {
-      margin-top: 0.5rem;
+      list-style: none;
+      margin: 0.75rem 0 0;
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
     }
 
     .tag {
-      display: inline-block;
+      margin: 0;
       background: var(--surface);
       color: var(--text-soft);
       font-family: var(--font-heading);
@@ -192,55 +391,21 @@
       border: 1px solid var(--rule);
     }
 
-    /* Section nav */
-    nav.section-nav {
-      margin-bottom: 3rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    nav.section-nav ul {
-      list-style: none;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 0.75rem;
-    }
-
-    nav.section-nav a {
-      font-family: var(--font-heading);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-soft);
-      text-decoration: none;
-      padding: 0.3rem 0.75rem;
-      border: 1px solid var(--rule);
-      border-radius: 999px;
-      transition: color 0.2s, border-color 0.2s, background-color 0.2s;
-    }
-
-    nav.section-nav a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      background-color: var(--surface);
-    }
-
     /* Testimonials */
     .testimonial {
       margin-bottom: 1.5rem;
       padding: 1rem 1.25rem;
       background: var(--surface);
       border-left: 3px solid var(--accent);
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 6px 6px 0;
     }
 
-    .testimonial p.quote {
+    .testimonial blockquote p {
       font-style: italic;
       margin-bottom: 0.5rem;
     }
 
-    .testimonial .attribution {
+    .testimonial figcaption {
       font-family: var(--font-heading);
       font-size: 0.85rem;
       color: var(--text-soft);
@@ -248,7 +413,8 @@
 
     /* Footer */
     footer {
-      margin-top: 4rem;
+      max-width: var(--measure);
+      margin: 4rem auto 0;
       padding-top: 1.5rem;
       border-top: 2px solid var(--rule);
       font-size: 0.85rem;
@@ -257,128 +423,123 @@
       font-family: var(--font-heading);
     }
 
-    /* Responsive */
     @media (max-width: 480px) {
-      body {
-        padding: 2rem 1rem;
-        font-size: 16px;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-      .entry-header {
-        flex-direction: column;
-      }
+      body { padding: 2rem 1rem; font-size: 1rem; }
+      .entry-header { flex-direction: column; gap: 0; }
+      .project { padding: 1rem; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; padding: 0; font-size: 11pt; }
+      nav.section-nav, .skip-link, #testimonials { display: none; }
+      a { color: inherit; border: 0; }
+      .project, .testimonial { background: none; border-color: #ccc; }
+      section, .entry, .pub, .project { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-  <main>
-    <!-- Header -->
-    <header>
+  <main id="content">
+    <header class="masthead">
       <h1>Dr. Raunak Sarbajna</h1>
-      <p class="subtitle">Lecturer, Computer Science</p>
-      <div class="contact">
-        <p>
-          Department of Computer Science &middot; University of Houston<br>
-          3551 Cullen Blvd, Houston, TX 77204 &middot; USA<br>
-           You can reach me at: <a href="mailto:
-          rsarbajna@uh.edu ">rsarbajna@uh.edu</a> or <a href="mailto:
-          contact@raunaksarbajna.com">contact@raunaksarbajna.com</a><br>
-          <a href="https://scholar.google.com/citations?user=Ypn_raEAAAAJ&hl=en">Google Scholar</a> &middot;
-          <a href="https://github.com/RaunakDune/">Github</a> &middot;
-          <a href="https://www.linkedin.com/in/raunak-sarbajna-81070a42/">LinkedIn</a>
-        </p>
-      </div>
+      <p class="subtitle">Professor of Practice, Computer Science</p>
+      <address class="contact">
+        Department of Computer Science &middot; University of Houston<br>
+        3551 Cullen Blvd, Houston, TX 77204 &middot; USA<br>
+        You can reach me at <a href="mailto:rsarbajna@uh.edu">rsarbajna@uh.edu</a>
+        or <a href="mailto:contact@raunaksarbajna.com">contact@raunaksarbajna.com</a>
+      </address>
+      <ul class="profiles" aria-label="Academic profiles">
+        <li><a href="https://scholar.google.com/citations?user=Ypn_raEAAAAJ&amp;hl=en" rel="me">Google Scholar</a></li>
+        <li><a href="https://orcid.org/0000-0002-3184-7226" rel="me">ORCID</a></li>
+        <li><a href="https://github.com/RaunakDune" rel="me">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/raunak-sarbajna-81070a42/" rel="me">LinkedIn</a></li>
+      </ul>
     </header>
 
-    <!-- Section navigation -->
     <nav class="section-nav" aria-label="Page sections">
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#positions">Academic Positions</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#positions">Positions</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#conference">Conference Talks</a></li>
+        <li><a href="#conference">Talks</a></li>
         <li><a href="#review">Peer Review</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
       </ul>
     </nav>
 
-    <!-- About -->
-    <section id="about" aria-label="About">
-      <h2>About</h2>
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
       <p>
-        I am a Geospatial Data Scientist with a decade-long focus on ML/AI. I particularly specialize in remote sensing, geotechnical engineering, geostatistics, agent-based modeling and visual place recognition. I have worked in blockchain-based edge computing, post-disaster recovery systems and Lunar exploration methodologies. I enjoy lecturing and teaching undergraduate students.
+        I am a Professor of Practice in the Department of Computer Science at the University of Houston and a Geospatial Data Scientist with a decade-long focus on ML/AI. I particularly specialize in remote sensing, geotechnical engineering, geostatistics, agent-based modeling and visual place recognition. I have worked in blockchain-based edge computing, post-disaster recovery systems and Lunar exploration methodologies. My current research centres on visual navigation for rovers on the Moon. I enjoy lecturing and teaching undergraduate students.
       </p>
-      <div class="tags">
-        <span class="tag">GIS</span>
-        <span class="tag">Remote Sensing</span>
-        <span class="tag">Machine Learning</span>
-        <span class="tag">Agent-Based Modeling</span>
-        <span class="tag">Visual Place Recognition</span>
-      </div>
+      <ul class="tags" aria-label="Research interests">
+        <li class="tag">GIS</li>
+        <li class="tag">Remote Sensing</li>
+        <li class="tag">Machine Learning</li>
+        <li class="tag">Agent-Based Modeling</li>
+        <li class="tag">Visual Place Recognition</li>
+        <li class="tag">Lunar Navigation</li>
+        <li class="tag">Crowdsensing</li>
+      </ul>
     </section>
 
-    <!-- Education -->
-    <section id="education" aria-label="Education">
-      <h2>Education</h2>
+    <section id="research" aria-labelledby="research-h">
+      <h2 id="research-h">Current Research</h2>
 
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Ph.D. in Computer Science</span>
-          <span class="entry-date">2025</span>
-        </div>
-        <p class="entry-place">University of Houston, Houston, TX</p>
-        <p>Dissertation: <em>"Spatial Computing Frameworks for Adaptive Disaster Response and Visual Place Recognition."</em> Supervisor: Dr. Christoph F. Eick.</p>
-      </div>
+      <article class="project">
+        <h3>Galatea: Visual Place Recognition for the Lunar Surface</h3>
+        <p>
+          A two-stage system that lets a rover localize itself from camera images where no GNSS is available. Global retrieval aggregates frozen or fine-tuned DINOv2 features with a semi-relaxed optimal-transport head that generalizes NetVLAD and SALAD; candidates are then re-ranked with training-free fused Gromov&ndash;Wasserstein matching of keypoints. Evaluated on <em>LunarSim-VPR</em>, a new physically motivated benchmark rendering identical poses under seven Sun conditions, Galatea reaches 78.8% Recall@1 against 27&ndash;36% for zero-shot terrestrial VPR models. With Christoph F. Eick; manuscript in preparation.
+        </p>
+        <ul class="links">
+          <li><a href="https://github.com/RaunakDune/galatea-lunar-vpr">Code &amp; benchmark</a></li>
+          <li><a href="https://lunarsim.org">Interactive demo: &ldquo;Where on the Moon?&rdquo;</a></li>
+          <li><a href="https://github.com/RaunakDune/Galatea-web-deploy">Demo source</a></li>
+        </ul>
+      </article>
 
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">M.Sc. in Computer Science</span>
-          <span class="entry-date">2019</span>
-        </div>
-        <p class="entry-place">Lamar University, Beaumont, TX</p>
-        <p>Dissertation: <em>"A Data Mining Framework for Analysing Geospatial-temporal Data."</em> Supervisor: Dr. Sujing Wang.</p>
-      </div>
-
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">M.Sc. in Remote Sensing and Geoinformatics</span>
-          <span class="entry-date">2015</span>
-        </div>
-        <p class="entry-place">Indian Institute of Remote Sensing, Dehradun, India</p>
-        <p>Project: <em>"Designing an efficient web-based 3D GIS platform for LU/LC index measurement."</em></p>
-      </div>
-
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">B.Tech in Information Technology</span>
-          <span class="entry-date">2013</span>
-        </div>
-        <p class="entry-place">West Bengal University of Technology, Kolkata, India</p>
-      </div>
+      <article class="project">
+        <h3>Proteus: Post-Disaster Road Maps from Crowdsensed GPS Traces</h3>
+        <p>
+          Reference implementation of the Proteus system (<cite>GeoInformatica</cite>, 2026). After a disaster, volunteers&rsquo; GPS traces are cross-verified against one another and the pre-disaster road network to produce a map of passable roads. The open-source release extends the paper to real GPS traces and includes an agent-based simulator, a command-line interface and scripts that reproduce the paper&rsquo;s experiments.
+        </p>
+        <ul class="links">
+          <li><a href="https://github.com/RaunakDune/proteus-implementation">Code</a></li>
+          <li><a href="https://doi.org/10.1007/s10707-026-00567-1">Paper</a></li>
+        </ul>
+      </article>
     </section>
 
-    <!-- Positions -->
-    <section id="positions" aria-label="Positions">
-      <h2>Academic Positions</h2>
+    <section id="positions" aria-labelledby="positions-h">
+      <h2 id="positions-h">Academic Positions</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Professor of Practice <span class="badge">Current</span></span>
+          <span class="entry-date"><time datetime="2026-08">August 2026</time> – Present</span>
+        </div>
+        <p class="entry-place">Department of Computer Science, University of Houston</p>
+      </div>
 
       <div class="entry">
         <div class="entry-header">
           <span class="entry-title">Lecturer</span>
-          <span class="entry-date">2025 – Present</span>
+          <span class="entry-date"><time datetime="2025">2025</time> – <time datetime="2026">2026</time></span>
         </div>
         <p class="entry-place">University of Houston</p>
-        <p>Adjunct Faculty, teaching Senior undergraduate level courses in Data Science, Artificial Intelligence and Computer Networks</p>
+        <p>Adjunct Faculty, teaching senior undergraduate courses in Data Science, Artificial Intelligence and Computer Networks.</p>
       </div>
 
       <div class="entry">
         <div class="entry-header">
           <span class="entry-title">Instructional Assistant</span>
-          <span class="entry-date">2022 – 2025</span>
+          <span class="entry-date"><time datetime="2022">2022</time> – <time datetime="2025">2025</time></span>
         </div>
         <p class="entry-place">University of Houston</p>
       </div>
@@ -386,7 +547,7 @@
       <div class="entry">
         <div class="entry-header">
           <span class="entry-title">Research Assistant</span>
-          <span class="entry-date">2020 – 2022</span>
+          <span class="entry-date"><time datetime="2020">2020</time> – <time datetime="2022">2022</time></span>
         </div>
         <p class="entry-place">University of Houston</p>
       </div>
@@ -394,125 +555,164 @@
       <div class="entry">
         <div class="entry-header">
           <span class="entry-title">Teaching Assistant</span>
-          <span class="entry-date">2018 – 2020</span>
+          <span class="entry-date"><time datetime="2018">2018</time> – <time datetime="2020">2020</time></span>
         </div>
         <p class="entry-place">Lamar University</p>
       </div>
     </section>
 
-    <!-- Publications -->
-    <section id="publications" aria-label="Publications">
-      <h2>Selected Publications</h2>
+    <section id="publications" aria-labelledby="publications-h">
+      <h2 id="publications-h">Publications</h2>
 
-      <article class="pub">
-        <p class="pub-title">
-          <a href="https://ieeexplore.ieee.org/abstract/document/9569794">DEIMOSBC: a blockchain-based system for crowdsensing after natural disasters</a>
-        </p>
-        <p class="pub-venue">3rd Conference on Blockchain Research & Applications for Innovative Networks and Services (BRAINS), IEEE,pp. 17–20, 2021.</p>
-      </article>
+      <ol class="pubs" reversed>
+        <li class="pub">
+          <p class="pub-title"><a href="https://doi.org/10.5194/isprs-annals-XI-2-2026-881-2026">DESPINA: Synthesis of High-Fidelity Planetary Horizon Reconstructions Using DEM-Guided Diffusion</a></p>
+          <p class="pub-authors">A. Nelson-Archer, <strong>R. Sarbajna</strong>, C. F. Eick</p>
+          <p class="pub-venue"><cite>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences</cite>, XI-2-2026, pp. 881–890, 2026.</p>
+        </li>
 
-      <article class="pub">
-        <p class="pub-title">
-          <a href="https://ieeexplore.ieee.org/abstract/document/9746752">Cross-modal knowledge distillation for vision-to-sensor action recognition</a>
-        </p>
-        <p class="pub-venue">IEEE International Conference on Acoustics,Speech and Signal Processing (ICASSP), IEEE, pp. 4448–4452, 2022.</p>
-      </article>
+        <li class="pub">
+          <p class="pub-title"><a href="https://doi.org/10.1007/s10707-026-00567-1">Proteus: A system for combining paths collected using crowdsensing</a></p>
+          <p class="pub-authors"><strong>R. Sarbajna</strong>, C. F. Eick, J. Ni</p>
+          <p class="pub-venue"><cite>GeoInformatica</cite>, 30, article 7, 2026.</p>
+          <p class="pub-links"><a href="https://github.com/RaunakDune/proteus-implementation">Code</a></p>
+        </li>
 
-      <article class="pub">
-        <p class="pub-title">
-          <a href="https://arxiv.org/abs/2409.05235">COVID19-CBABM: A City-Based Agent Based Disease Spread Modeling Framework</a>
-        </p>
-        <p class="pub-venue">Society for Epidemiologic Research, Mid-Year Conference, 2025.</p>
-      </article>
+        <li class="pub">
+          <p class="pub-title"><a href="https://arxiv.org/abs/2409.05235">COVID19-CBABM: A City-Based Agent Based Disease Spread Modeling Framework</a></p>
+          <p class="pub-authors"><strong>R. Sarbajna</strong>, K. Elgarroussi, H. D. Vo, J. Ni, C. F. Eick</p>
+          <p class="pub-venue">Society for Epidemiologic Research, Mid-Year Conference, 2025. Preprint: arXiv:2409.05235.</p>
+        </li>
 
-      <article class="pub">
-        <p class="pub-title">
-          <a href="https://isprs-annals.copernicus.org/articles/XI-2-2026/881/2026/isprs-annals-XI-2-2026-881-2026.html">DESPINA: Synthesis of High-Fidelity Planetary Horizon Reconstructions Using DEM-Guided Diffusion</a>
-        </p>
-        <p class="pub-venue">ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XI-2-2026, 881–890. 2026.</p>
-      </article>
+        <li class="pub">
+          <p class="pub-title"><a href="https://doi.org/10.1145/3615891.3628016">PhobosBC: A Blockchain-based Crowdsourced Post-disaster Mapping System and its Agent-based Simulation</a></p>
+          <p class="pub-authors"><strong>R. Sarbajna</strong>, C. F. Eick, A. Laszka</p>
+          <p class="pub-venue">6th ACM SIGSPATIAL International Workshop on GeoSpatial Simulation (GeoSim), Hamburg, Germany, pp. 10–18, 2023.</p>
+          <p class="pub-links"><a href="https://www.youtube.com/watch?v=loHamHxb-aQ">Talk video</a></p>
+        </li>
 
-      <article class="pub">
-        <p class="pub-title">
-          <a href="https://link.springer.com/article/10.1007/s10707-026-00567-1">Proteus: A system for combining paths collected using crowdsensing</a>
-        </p>
-        <p class="pub-venue">GeoInformatica, pp. 1–24, 2026.</p>
-      </article>
+        <li class="pub">
+          <p class="pub-title"><a href="https://doi.org/10.1109/ICASSP43922.2022.9746752">Cross-modal Knowledge Distillation for Vision-to-Sensor Action Recognition</a></p>
+          <p class="pub-authors">J. Ni, <strong>R. Sarbajna</strong>, Y. Liu, A. H. H. Ngu, Y. Yan</p>
+          <p class="pub-venue">IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 4448–4452, 2022.</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2112.01849">arXiv</a></p>
+        </li>
 
+        <li class="pub">
+          <p class="pub-title"><a href="https://doi.org/10.1109/BRAINS52497.2021.9569794">DEIMOSBC: A Blockchain-based System for Crowdsensing after Natural Disasters</a></p>
+          <p class="pub-authors"><strong>R. Sarbajna</strong>, C. F. Eick, A. Laszka</p>
+          <p class="pub-venue">3rd Conference on Blockchain Research &amp; Applications for Innovative Networks and Services (BRAINS), IEEE, pp. 17–20, 2021.</p>
+        </li>
+      </ol>
+
+      <p class="note">An up-to-date list with citation counts is on <a href="https://scholar.google.com/citations?user=Ypn_raEAAAAJ&amp;hl=en">Google Scholar</a> and <a href="https://orcid.org/0000-0002-3184-7226">ORCID</a>.</p>
     </section>
 
-    <!-- Teaching -->
-    <section id="teaching" aria-label="Teaching">
-      <h2>Classes Taught</h2>
+    <section id="education" aria-labelledby="education-h">
+      <h2 id="education-h">Education</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Ph.D. in Computer Science</span>
+          <span class="entry-date"><time datetime="2025">2025</time></span>
+        </div>
+        <p class="entry-place">University of Houston, Houston, TX</p>
+        <p>Dissertation: <a href="https://uh-ir.tdl.org/items/055a04d5-a24a-4db9-a154-e940bb6f1746"><em>Spatial Computing Frameworks for Adaptive Disaster Response and Visual Place Recognition</em></a>. Supervisor: Dr. Christoph F. Eick.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">M.Sc. in Computer Science</span>
+          <span class="entry-date"><time datetime="2019">2019</time></span>
+        </div>
+        <p class="entry-place">Lamar University, Beaumont, TX</p>
+        <p>Dissertation: <em>A Data Mining Framework for Analysing Geospatial-temporal Data</em>. Supervisor: Dr. Sujing Wang.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">M.Sc. in Remote Sensing and Geoinformatics</span>
+          <span class="entry-date"><time datetime="2015">2015</time></span>
+        </div>
+        <p class="entry-place">Indian Institute of Remote Sensing, Dehradun, India</p>
+        <p>Project: <em>Designing an efficient web-based 3D GIS platform for LU/LC index measurement</em>.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">B.Tech in Information Technology</span>
+          <span class="entry-date"><time datetime="2013">2013</time></span>
+        </div>
+        <p class="entry-place">West Bengal University of Technology, Kolkata, India</p>
+      </div>
+    </section>
+
+    <section id="teaching" aria-labelledby="teaching-h">
+      <h2 id="teaching-h">Classes Taught</h2>
       <ul>
         <li><strong>COSC 3337:</strong> Data Science I</li>
         <li><strong>COSC 4368:</strong> Fundamentals of Artificial Intelligence</li>
-        <li><strong>COSC 4377:</strong> Introduction To Computer Networks</li>        
+        <li><strong>COSC 4377:</strong> Introduction to Computer Networks</li>
       </ul>
     </section>
 
-    <!-- Conference -->
-    <section id="conference" aria-label="Conference">
-      <h2>Selected Conference Talks</h2>
+    <section id="conference" aria-labelledby="conference-h">
+      <h2 id="conference-h">Selected Conference Talks</h2>
       <ul>
         <li>Sixth Annual STEM Conference, Lamar University, USA. <em>2018.</em></li>
         <li>Ignite 2019, University of California, Davis, USA. <em>2019.</em></li>
         <li>BRAINS 2021, Paris, France. <em>2021.</em></li>
         <li>NASA Johnson Space Center Hackathon, Houston, USA. <em>2022, 2023.</em></li>
-        <li><a href="https://www.youtube.com/watch?v=loHamHxb-aQ">6th ACM SIGSPATIAL International Workshop on GeoSpatial Simulation, Hamburg, Germany. <em>2023.</em></a></li>
-        <li><a href="https://www.youtube.com/watch?v=tzZDv7YeMA4">University of Houston Undergraduate Colloquium, Houston, USA. <em>2025.</em></a></li>
+        <li>6th ACM SIGSPATIAL International Workshop on GeoSpatial Simulation, Hamburg, Germany. <em>2023.</em> <a href="https://www.youtube.com/watch?v=loHamHxb-aQ">Video</a></li>
+        <li>University of Houston Undergraduate Colloquium, Houston, USA. <em>2025.</em> <a href="https://www.youtube.com/watch?v=tzZDv7YeMA4">Video</a></li>
       </ul>
     </section>
 
-    <!-- Review -->
-    <section id="review" aria-label="Review">
-      <h2>Peer Review Venues</h2>
+    <section id="review" aria-labelledby="review-h">
+      <h2 id="review-h">Peer Review Venues</h2>
       <ul>
         <li>IEEE 16th International Conference on Smart City. <em>2018.</em></li>
         <li>IEEE 20th International Conference on High Performance Computing and Communications. <em>2018.</em></li>
-        <li>26th International Symposium on Methodologies for Intelligent Systems. <em>2022</em></li>
+        <li>26th International Symposium on Methodologies for Intelligent Systems. <em>2022.</em></li>
         <li>IEEE International Conference on Data Mining. <em>2022, 2023.</em></li>
         <li>GeoInformatica: An International Journal on Advances of Computer Science for Geographic Information Systems. <em>2023.</em></li>
         <li>IEEE 10th International Conference on Data Science and Advanced Analytics (DSAA). <em>2023.</em></li>
-        <li>Knowledge-based systems. <em>2025.</em></li>
+        <li>Knowledge-Based Systems. <em>2025.</em></li>
       </ul>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" aria-label="Testimonials">
-      <h2>Student Testimonials</h2>
+    <section id="testimonials" aria-labelledby="testimonials-h">
+      <h2 id="testimonials-h">Student Testimonials</h2>
 
-      <div class="testimonial">
-        <p class="quote">"Professor Raunak was one of the better professors in the Computer Science department. He seemed knowledgeable about the subject. I was able to reach him with questions outside of class easily and he would respond immediately. He made all class material easily available to us and his notes were easy to understand. I do not have anything bad to say about the instructor. "</p>
-        <p class="attribution">— Student, COSC 4368: Fundamentals of Artificial Intelligence</p>
-      </div>
-      
-      <div class="testimonial">
-        <p class="quote">"The instructor was able to convey his ideas and lectures clearly. He was very enthusiastic about the material and made it easy to digest the knowledge he wanted to present. The presentation format is pretty great too. Groups of students come together to present a given research paper to explain to other students what it's about allowing us to understand current standings of the AI field. Overall, I really like this class."</p>
-        <p class="attribution">— Student, COSC 4368: Fundamentals of Artificial Intelligence</p>
-      </div>         
+      <figure class="testimonial">
+        <blockquote><p>&ldquo;Professor Raunak was one of the better professors in the Computer Science department. He seemed knowledgeable about the subject. I was able to reach him with questions outside of class easily and he would respond immediately. He made all class material easily available to us and his notes were easy to understand. I do not have anything bad to say about the instructor.&rdquo;</p></blockquote>
+        <figcaption>— Student, COSC 4368: Fundamentals of Artificial Intelligence</figcaption>
+      </figure>
 
-      <div class="testimonial">
-        <p class="quote">"+ prof obviously knows about the topics and has most of the techniques taught in real life + pretty good lectures, good at explaining and not just reading slides + exams were pretty straightforward (in terms of the actual questions) + project was fun + textbooks were similar to lecture so textbooks were a good resource - we covered a lot so we were only able to learn about the fundamentals of all the techniques (not necessarily bad)"</p>
-        <p class="attribution">— Student, COSC 3337: Data Science I</p>
-      </div>
+      <figure class="testimonial">
+        <blockquote><p>&ldquo;The instructor was able to convey his ideas and lectures clearly. He was very enthusiastic about the material and made it easy to digest the knowledge he wanted to present. The presentation format is pretty great too. Groups of students come together to present a given research paper to explain to other students what it's about allowing us to understand current standings of the AI field. Overall, I really like this class.&rdquo;</p></blockquote>
+        <figcaption>— Student, COSC 4368: Fundamentals of Artificial Intelligence</figcaption>
+      </figure>
 
-      <div class="testimonial">
-        <p class="quote">"hi raunak, thank you for your help this semester, you helped me a lot with this class and i think youre the best TA ive ever had for any class"</p>
-        <p class="attribution">— Student, COSC 3337: Data Science I</p>
-      </div>
+      <figure class="testimonial">
+        <blockquote><p>&ldquo;+ prof obviously knows about the topics and has most of the techniques taught in real life + pretty good lectures, good at explaining and not just reading slides + exams were pretty straightforward (in terms of the actual questions) + project was fun + textbooks were similar to lecture so textbooks were a good resource - we covered a lot so we were only able to learn about the fundamentals of all the techniques (not necessarily bad)&rdquo;</p></blockquote>
+        <figcaption>— Student, COSC 3337: Data Science I</figcaption>
+      </figure>
 
-      <div class="testimonial">
-        <p class="quote">"Well hopefully we get blessed with your skills next semseter. By far the best TA I have ever had."</p>
-        <p class="attribution">— Student, COSC 3337: Data Science I</p>
-      </div>
+      <figure class="testimonial">
+        <blockquote><p>&ldquo;hi raunak, thank you for your help this semester, you helped me a lot with this class and i think youre the best TA ive ever had for any class&rdquo;</p></blockquote>
+        <figcaption>— Student, COSC 3337: Data Science I</figcaption>
+      </figure>
+
+      <figure class="testimonial">
+        <blockquote><p>&ldquo;Well hopefully we get blessed with your skills next semseter. By far the best TA I have ever had.&rdquo;</p></blockquote>
+        <figcaption>— Student, COSC 3337: Data Science I</figcaption>
+      </figure>
     </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>Last updated 19 July 2026 &middot; Built by Raunak with plain HTML</p>
-    </footer>
   </main>
 
+  <footer>
+    <p>Last updated <time datetime="2026-10-23">23 October 2026</time> &middot; Built by Raunak with plain HTML</p>
+  </footer>
 </body>
 </html>
